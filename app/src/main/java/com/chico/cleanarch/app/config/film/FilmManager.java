@@ -2,7 +2,6 @@ package com.chico.cleanarch.app.config.film;
 
 import java.util.HashMap;
 import java.util.Map;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -10,7 +9,6 @@ import org.springframework.context.annotation.Configuration;
 public class FilmManager {
 
   @Bean
-  @Qualifier("filmTitleManager")
   public Map<String, Integer> filmTitleManager() {
     return new HashMap<>() {{
       put("the force awakens", 7);

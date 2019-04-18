@@ -1,0 +1,14 @@
+version: '3.7'
+
+services:
+  mongodb:
+    image: mongo:latest
+    container_name: swapi-mongodb
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: admin
+      MONGO_INITDB_DATABASE: swapi
+    ports:
+      - 27017:27017
+    command: mongod --auth

@@ -12,6 +12,7 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class CharacterRetrieverUseCase {
 
+  @Named("filmMongoProvider")
   private final FilmDataProvider filmDataProvider;
   private final Map<String, Integer> filmTitleManager;
 
