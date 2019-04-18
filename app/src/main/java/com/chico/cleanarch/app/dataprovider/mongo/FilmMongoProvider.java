@@ -10,10 +10,8 @@ import com.chico.cleanarch.domain.entity.Character;
 import java.util.List;
 import javax.inject.Named;
 import lombok.RequiredArgsConstructor;
-import org.springframework.context.annotation.Primary;
 
-@Named
-@Primary
+@Named("filmMongoProvider")
 @RequiredArgsConstructor
 public class FilmMongoProvider implements FilmDataProvider {
 

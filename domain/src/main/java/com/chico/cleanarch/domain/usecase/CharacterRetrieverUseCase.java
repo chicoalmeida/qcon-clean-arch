@@ -6,15 +6,19 @@ import com.chico.cleanarch.domain.usecase.expection.BusinessException;
 import java.util.List;
 import java.util.Map;
 import javax.inject.Named;
-import lombok.RequiredArgsConstructor;
 
 @Named
-@RequiredArgsConstructor
 public class CharacterRetrieverUseCase {
 
-  @Named("filmMongoProvider")
   private final FilmDataProvider filmDataProvider;
   private final Map<String, Integer> filmTitleManager;
+
+  public CharacterRetrieverUseCase(
+      @Named("filmMongoProvider") FilmDataProvider filmDataProvider,
+      Map<String, Integer> filmTitleManager) {
+    this.filmDataProvider = filmDataProvider;
+    this.filmTitleManager = filmTitleManager;
+  }
 
   public List<Character> retrieveFilmCharacters(final String filmTitle) {
     final Integer filmId = filmTitleManager.get(filmTitle.toLowerCase());

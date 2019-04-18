@@ -14,7 +14,7 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
 import org.springframework.web.client.RestTemplate;
 
-@Named
+@Named("filmHttpProvider")
 @RequiredArgsConstructor
 public class FilmHttpProvider implements FilmDataProvider {
 
